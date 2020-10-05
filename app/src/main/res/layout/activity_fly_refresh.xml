@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context="com.scwang.refreshlayout.activity.style.FlyRefreshStyleActivity"
+    >
+
+    <com.scwang.smart.refresh.header.flyrefresh.MountainSceneView
+        android:id="@+id/mountain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:msvPrimaryColor="@color/colorPrimary"
+        app:msvViewportHeight="340dp"
+        />
+    <!--srlViewportHeightHeight 设置为-->
+    <!--AppBarLayout.Height + RefreshHeader.Height-->
+    <!--效果最佳-->
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:background="@android:color/transparent"
+        android:clipChildren="false"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginBottom="120dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/AppTheme.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:title="@string/title_activity_style_fly_refresh"
+                />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:srlEnableLoadMore="false"
+        app:srlEnableOverScrollBounce="false"
+        app:srlEnablePreviewInEditMode="true"
+        app:srlHeaderHeight="100dp"
+        app:srlHeaderMaxDragRate="1.5"
+        app:srlReboundDuration="200"
+        >
+
+        <com.scwang.smartrefresh.header.FlyRefreshHeader
+            android:id="@+id/flyRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingTop="25dp"
+            tools:listitem="@layout/activity_fly_refresh_item"
+            />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:elevation="0dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/recyclerView"
+        app:layout_anchorGravity="top"
+        />
+
+    <com.scwang.smart.refresh.header.flyrefresh.FlyView
+        android:id="@+id/flyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:elevation="3dp"
+        app:layout_anchor="@id/fab"
+        app:layout_anchorGravity="center"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

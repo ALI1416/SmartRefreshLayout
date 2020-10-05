@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDark"
+    android:orientation="vertical"
+    tools:context="com.scwang.refreshlayout.activity.practice.QQBrowserPracticeActivity"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/AppTheme.Toolbar"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/title_activity_practice_web_view"
+        />
+
+    <ezy.ui.layout.LoadingLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlHeaderHeight="150dp"
+            app:srlHeaderMaxDragRate="1"
+            >
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#555"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="5dp"
+                android:padding="20dp"
+                android:text="@string/github_qq_browser_kernel"
+                android:textColor="#aaa"
+                android:textSize="16sp"
+                app:layout_srlBackgroundColor="#555"
+                app:layout_srlSpinnerStyle="FixedBehind"
+                />
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingTop="?attr/actionBarSize"
+                />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </ezy.ui.layout.LoadingLayout>
+
+</LinearLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/dimenPaddingCommon"
+    >
+
+    <TextView
+        android:id="@+id/chatting_tv_sendtime"
+        style="@style/AppTheme.Label.Assistant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:paddingLeft="3dip"
+        android:paddingRight="3dip"
+        android:text="@string/app_name"
+        android:textColor="#aaaaaa"
+        android:textSize="@dimen/dimenTextSmall"
+        />
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/chatting_tv_sysmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="5dp"
+        android:paddingTop="2dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="2dp"
+        android:text="@string/app_name"
+        android:textColor="#eeeeee"
+        android:textSize="@dimen/dimenTextSmall"
+        app:rv_backgroundColor="#aaaaaa"
+        app:rv_cornerRadius="3dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/chatting_left"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/chatting_liv_avatar"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentTop="true"
+            android:focusable="false"
+            android:src="@mipmap/image_avatar_1"
+            />
+
+        <LinearLayout
+            android:id="@+id/chatting_lframe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_toEndOf="@+id/chatting_liv_avatar"
+            android:layout_toRightOf="@id/chatting_liv_avatar"
+            android:background="@drawable/skin_messages_left_bubble"
+            android:gravity="center"
+            android:minWidth="60dp"
+            android:orientation="vertical"
+            >
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                >
+
+                <ImageView
+                    android:id="@+id/chatting_liv_img"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@mipmap/image_avatar_2"
+                    />
+
+                <TextView
+                    android:id="@+id/chatting_ltv_txt"
+                    style="@style/AppTheme.Label.Title.Small"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:gravity="start"
+                    android:singleLine="false"
+                    android:text="@string/app_name"
+                    />
+            </FrameLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chatting_right"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/chatting_riv_avatar"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:focusable="false"
+            android:src="@mipmap/image_avatar_4"
+            />
+
+        <LinearLayout
+            android:id="@+id/chatting_rframe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toStartOf="@+id/chatting_riv_avatar"
+            android:layout_toLeftOf="@id/chatting_riv_avatar"
+            android:background="@drawable/skin_messages_right_bubble"
+            android:gravity="center"
+            android:minWidth="60dp"
+            android:orientation="vertical"
+            >
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                >
+
+                <ImageView
+                    android:id="@+id/chatting_riv_img"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:visibility="visible"
+                    tools:src="@mipmap/image_practice_repast_1"
+                    />
+
+                <TextView
+                    android:id="@+id/chatting_rtv_txt"
+                    style="@style/AppTheme.Label.Title.Small"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:gravity="end"
+                    android:singleLine="false"
+                    android:text="@string/app_name"
+                    />
+            </FrameLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
