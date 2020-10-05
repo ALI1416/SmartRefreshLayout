@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.scwang.refreshlayout.fragment.example.PureScrollExampleFragmentHeader"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/AppTheme.Toolbar"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/fragment_example_pure_scroll_header"
+        />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableOverScrollDrag="false"
+        app:srlEnablePureScrollMode="false"
+        >
+
+        <com.scwang.smartrefresh.layout.header.FalsifyHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:overScrollMode="never"
+            tools:listitem="@android:layout/simple_list_item_2"
+            />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDark"
+    tools:context="com.scwang.refreshlayout.activity.practice.BannerPracticeActivity"
+    >
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnableHeaderTranslationContent="false"
+        app:srlEnableNestedScrolling="true"
+        app:srlEnablePreviewInEditMode="false"
+        app:srlPrimaryColor="@color/colorPrimary"
+        >
+
+        <com.scwang.smartrefresh.header.MaterialHeader
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingTop="?attr/actionBarSize"
+            tools:listitem="@layout/item_movie_item"
+            />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:realtimeBlurRadius="10dp"
+        app:realtimeOverlayColor="@color/colorPrimaryOverlay"
+        />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/AppTheme.Toolbar"
+        android:background="@android:color/transparent"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:title="@string/title_activity_practice_banner"
+        />
+
+</FrameLayout>

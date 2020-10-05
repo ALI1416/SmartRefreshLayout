@@ -1,0 +1,8 @@
+<manifest package="com.scwang.smartrefresh.layout">
+
+    <application>
+        <!--android:allowBackup="true"-->
+        <!--android:supportsRtl="true"-->
+    </application>
+
+</manifest>
